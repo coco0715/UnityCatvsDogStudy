@@ -8,6 +8,7 @@ public class gameManager : MonoBehaviour
     public GameObject dog;
     public GameObject food;
     public GameObject normalCat;
+    public GameObject fatCat;
     public GameObject retryBtn;
     public Text levelText;
     public GameObject levelFront;
@@ -47,6 +48,22 @@ public class gameManager : MonoBehaviour
     void MakeCat()
     {
         Instantiate(normalCat);
+        if (level == 1)
+        {
+            float p = Random.Range(0, 10);
+            if (p < 2) Instantiate(normalCat);
+        }
+        else if (level == 2)
+        {
+            float p = Random.Range(0, 10);
+            if (p < 5) Instantiate(normalCat);
+        }
+        else if (level >= 3)
+        {
+            float p = Random.Range(0, 10);
+            if (p < 6) Instantiate(normalCat);
+            Instantiate(fatCat);
+        }
     }
 
     public void GameOver()
