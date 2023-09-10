@@ -34,6 +34,10 @@ public class cat : MonoBehaviour
             {
                 transform.position += new Vector3(0, -0.02f, 0);
             }
+            else if (type == 2)
+            {
+                transform.position += new Vector3(0, -0.01f, 0);
+            }
             if (transform.position.y < -16f)
             {
                 gameManager.I.GameOver();
