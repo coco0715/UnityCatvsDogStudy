@@ -60,6 +60,7 @@ public class cat : MonoBehaviour
                     gameObject.transform.Find("full").gameObject.SetActive(true);
                     isFull = true;
                 }
+
             }
 
         }

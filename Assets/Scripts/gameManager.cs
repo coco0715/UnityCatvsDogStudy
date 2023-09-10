@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gameManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class gameManager : MonoBehaviour
     public GameObject food;
     public GameObject normalCat;
     public GameObject retryBtn;
+    public Text levelText;
+    public GameObject levelFront;
     public static gameManager I;
 
     int level = 0;
@@ -56,5 +59,8 @@ public class gameManager : MonoBehaviour
     {
         cat += 1;
         level = cat / 5;
+
+        levelText.text = level.ToString();
+        levelFront.transform.localScale = new Vector3((cat - level * 5) / 5.0f, 1.0f, 1.0f);
     }
 }
